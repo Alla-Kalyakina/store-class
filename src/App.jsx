@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css'
 
 const item = {
@@ -8,9 +9,9 @@ const item = {
   price: 399,
   currency: '£'
 }
-function ShopItemFunc(){
-
-  return <div className="main-content">
+class ShopItemClass extends React.Component {
+  render() {
+      return <div className="main-content">
               <h2>{item.brand}</h2>
               <h1>{item.title}</h1>
               <h3>{item.description}</h3>
@@ -24,7 +25,7 @@ function ShopItemFunc(){
                   <button>Добавить в корзину</button>
               </div>  
           </div>
-      
+  } 
 }
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
         <div className='highlight-overlay'></div>
       </div>
       <div className="window">
-        <ShopItemFunc item={item} />
+        <ShopItemClass item={item} />
       </div>
     </div>
   )
